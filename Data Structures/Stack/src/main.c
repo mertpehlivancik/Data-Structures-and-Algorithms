@@ -11,12 +11,13 @@
 #include "stack_with_array.h"
 
 int main() {
-	Stack* stack = createStack(100);
+	Stack *stack = createStack(100);
 
 	push(stack, 10);
 	push(stack, 20);
 	push(stack, 30);
 
+	printf("%d is peek of stack\n", peek(stack));
 	printf("%d popped from stack\n", pop(stack));
 
 	return 0;
