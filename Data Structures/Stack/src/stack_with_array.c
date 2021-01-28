@@ -13,7 +13,7 @@
 // function to create a stack of given capacity. It initializes size of
 // stack as 0
 Stack* createStack(unsigned capacity) {
-	Stack* stack = (Stack*) malloc(sizeof(struct Stack));
+	Stack* stack = (Stack*) malloc(sizeof(Stack));
 	stack->capacity = capacity;
 	stack->top = -1;
 	stack->array = (int*) malloc(stack->capacity * sizeof(int));
