@@ -19,7 +19,7 @@ typedef struct Stack {
 	int* array;
 } Stack;
 
-struct Stack* createStack(unsigned capacity);
+Stack* createStack(unsigned capacity);
 int isFull(Stack* stack);
 int isEmpty(Stack* stack);
 void push(Stack* stack, int item);
