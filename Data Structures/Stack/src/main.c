@@ -19,6 +19,9 @@ int main() {
 
 	printf("%d is peek of stack\n", peek(stack));
 	printf("%d popped from stack\n", pop(stack));
+	printf("%d popped from stack\n", pop(stack));
+	printf("%d popped from stack\n", pop(stack));
+
 
 	return 0;
 }
