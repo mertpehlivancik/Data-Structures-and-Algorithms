@@ -1,8 +1,8 @@
 /*
  ============================================================================
  Name        : LinkedList.c
- Author      : 
- Version     :
+ Author      : Mert PEHLİVANCIK
+ Version     : 1.1
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
@@ -11,44 +11,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
+typedef struct LINKED_LIST_NODE_s *LINKED_LIST_NODE;
+typedef struct LINKED_LIST_NODE_s {
 	int data;
-	struct node *next;
-};
+	LINKED_LIST_NODE next;
+} LINKED_LIST_NODE_t[1];
 
-void printList(struct node *p) {
-	while (p != NULL) {
-		printf("%d ", p->data);
-		p = p->next;
+typedef struct LINKED_LIST_s *LINKED_LIST;
+typedef struct LINKED_LIST_s {
+	LINKED_LIST_NODE head;
+} LINKED_LIST_t[1];
+
+void linked_list_print(LINKED_LIST list){
+	LINKED_LIST_NODE node = list->head;
+	while(node != NULL){
+		printf("%d ",node->data);
+		node = node->next;
 	}
 }
 
-struct node* push(struct node *head, int data) {
-	struct node *node;
-	node = (struct node*)malloc(sizeof(struct node));
-	node->data = data;
-	node->next = head;
-	return node;
-}
-
 int main(void) {
-	struct node *head = NULL;
-	struct node *first = NULL;
-	struct node *second = NULL;
 
-	head = (struct node*) malloc(sizeof(struct node));
-	first = (struct node*) malloc(sizeof(struct node));
-	second = (struct node*) malloc(sizeof(struct node));
+	LINKED_LIST mylist = (LINKED_LIST)malloc(sizeof(LINKED_LIST_t));
+	mylist->head = NULL;
+	LINKED_LIST_NODE node1 = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
+	LINKED_LIST_NODE node2 = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
+	LINKED_LIST_NODE node3 = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
+	mylist->head = node1;
+	node1->data=1;
+	node1->next=node2;
+	node2->data=2;
+	node2->next=node3;
+	node3->data = 3;
+	node3->next = NULL;
 
-	head->next = first;
-	head->data = 0;
-	first->data = 1;
-	first->next = second;
-	second->data = 2;
-	second->next = NULL;
-
-	struct node* newHead = NULL;
-	newHead = push(head,5);
-	printList(newHead);
+	linked_list_print(mylist);
+//	printf("asdsad");
 	return 0;
 }
