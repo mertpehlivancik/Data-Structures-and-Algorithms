@@ -22,6 +22,19 @@ typedef struct LINKED_LIST_s {
 	LINKED_LIST_NODE head;
 } LINKED_LIST_t[1];
 
+LINKED_LIST linked_list_init(){
+	LINKED_LIST list = (LINKED_LIST)malloc(sizeof(LINKED_LIST_t));
+	list->head = NULL;
+	return list;
+}
+
+LINKED_LIST_NODE linked_list_node_init(int data){
+	LINKED_LIST_NODE node = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
+	node->data = data;
+	node->next = NULL;
+	return node;
+}
+
 void linked_list_print(LINKED_LIST list){
 	LINKED_LIST_NODE node = list->head;
 	while(node != NULL){
@@ -32,11 +45,11 @@ void linked_list_print(LINKED_LIST list){
 
 int main(void) {
 
-	LINKED_LIST mylist = (LINKED_LIST)malloc(sizeof(LINKED_LIST_t));
-	mylist->head = NULL;
-	LINKED_LIST_NODE node1 = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
-	LINKED_LIST_NODE node2 = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
-	LINKED_LIST_NODE node3 = (LINKED_LIST_NODE)malloc(sizeof(LINKED_LIST_NODE_t));
+	LINKED_LIST mylist;
+	mylist = linked_list_init();
+	LINKED_LIST_NODE node1 = linked_list_node_init(1);
+	LINKED_LIST_NODE node2 = linked_list_node_init(2);
+	LINKED_LIST_NODE node3 = linked_list_node_init(3);
 	mylist->head = node1;
 	node1->data=1;
 	node1->next=node2;
