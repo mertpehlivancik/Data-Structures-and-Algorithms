@@ -48,14 +48,25 @@ void linked_list_append(LINKED_LIST list, int data) {
 	}
 }
 
-void linked_list_prepend(LINKED_LIST list, int data){
-	if(list->head == NULL){
+void linked_list_prepend(LINKED_LIST list, int data) {
+	if (list->head == NULL) {
 		list->head = linked_list_node_init(data);
-	}else{
+	} else {
 		LINKED_LIST_NODE node = linked_list_node_init(data);
 		node->next = list->head;
 		list->head = node;
 	}
+}
+
+void linked_list_insert(LINKED_LIST list, int after_node, int data) {
+	LINKED_LIST_NODE temp = list->head;
+	while (after_node != 1) {
+		temp=temp->next;
+		after_node--;
+	}
+	LINKED_LIST_NODE node = linked_list_node_init(data);
+	node->next = temp->next;
+	temp->next = node;
 }
 
 void linked_list_print(LINKED_LIST list) {
@@ -75,9 +86,10 @@ int main(void) {
 	linked_list_append(mylist, 2);
 	linked_list_append(mylist, 3);
 	linked_list_append(mylist, 4);
-
 	linked_list_prepend(mylist, 0);
 	linked_list_prepend(mylist, -1);
+
+	linked_list_insert(mylist,2,99);
 
 	linked_list_print(mylist);
 //	printf("asdsad");
