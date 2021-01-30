@@ -99,6 +99,12 @@ void linked_list_delete_node_as_key(LINKED_LIST list, int data) {
 	free(node);
 }
 
+//void linked_list_delete_node_as_position(LINKED_LIST list, int position){
+//	if(position == 0){
+//		LINKED_LIST_NODE prev = list->head;
+//	}
+//}
+
 int main(void) {
 
 	LINKED_LIST mylist;
@@ -114,6 +120,6 @@ int main(void) {
 	linked_list_insert(mylist, 3, 99);
 	linked_list_delete_node_as_key(mylist, 99);
 	linked_list_print(mylist);
-//	printf("asdsad");
+
 	return 0;
 }
