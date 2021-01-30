@@ -60,6 +60,9 @@ void linked_list_prepend(LINKED_LIST list, int data) {
 
 void linked_list_insert(LINKED_LIST list, int position, int data) {
 	LINKED_LIST_NODE temp = list->head;
+	if(position == 0){
+		linked_list_prepend(list, data);
+	}
 	while (position != 1) {
 		if (temp == NULL) {
 			break;
@@ -101,7 +104,7 @@ int main(void) {
 	linked_list_prepend(mylist, 0);
 	linked_list_prepend(mylist, -1);
 
-	linked_list_insert(mylist, 2, 99);
+	linked_list_insert(mylist, 4, 99);
 
 	linked_list_print(mylist);
 //	printf("asdsad");
