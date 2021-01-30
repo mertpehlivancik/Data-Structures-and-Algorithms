@@ -104,7 +104,7 @@ int main(void) {
 	linked_list_prepend(mylist, 0);
 	linked_list_prepend(mylist, -1);
 
-	linked_list_insert(mylist, 4, 99);
+	linked_list_insert(mylist, 3, 99);
 
 	linked_list_print(mylist);
 //	printf("asdsad");
