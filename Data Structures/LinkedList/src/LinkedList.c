@@ -115,6 +115,17 @@ void linked_list_delete_node_as_position(LINKED_LIST list, int position) {
 		free(node);
 	}
 }
+// -1 0 1 2 3 4 NULL
+// Deleting all list as node by node from memory
+void linked_list_delete_list(LINKED_LIST list) {
+	LINKED_LIST_NODE node = list->head;
+	LINKED_LIST_NODE temp = list->head;
+	while (node != NULL) {
+		temp = temp->next;
+		free(node);
+		node = temp;
+	}
+}
 
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;
@@ -125,8 +136,6 @@ void linked_list_print(LINKED_LIST list) {
 }
 
 int main(void) {
-	// -1 0 1 2 3 4 Data
-	//  0 1 2 3 4 5 Index(position)
 	LINKED_LIST mylist;
 	mylist = linked_list_init();
 
@@ -139,7 +148,11 @@ int main(void) {
 
 	linked_list_insert(mylist, 3, 99);
 	linked_list_delete_node_as_key(mylist, 99);
+	// -1 0 1 2 3 4 Data
+	//  0 1 2 3 4 5 Index(position)
 	linked_list_delete_node_as_position(mylist, 0);
+	linked_list_delete_list(mylist);
+
 	linked_list_print(mylist);
 
 	return 0;
