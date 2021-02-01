@@ -77,14 +77,6 @@ void linked_list_insert(LINKED_LIST list, int position, int data) {
 	}
 }
 
-void linked_list_print(LINKED_LIST list) {
-	LINKED_LIST_NODE node = list->head;
-	while (node != NULL) {
-		printf("%d ", node->data);
-		node = node->next;
-	}
-}
-
 void linked_list_delete_node_as_key(LINKED_LIST list, int data) {
 	LINKED_LIST_NODE prev = list->head;
 	while (prev != NULL) {
@@ -99,14 +91,42 @@ void linked_list_delete_node_as_key(LINKED_LIST list, int data) {
 	free(node);
 }
 
-//void linked_list_delete_node_as_position(LINKED_LIST list, int position){
-//	if(position == 0){
-//		LINKED_LIST_NODE prev = list->head;
-//	}
-//}
+void linked_list_delete_node_as_position(LINKED_LIST list, int position) {
+	if (list == NULL) {
+		return;
+	}
+	LINKED_LIST_NODE node = list->head;
+	LINKED_LIST_NODE prev = list->head;
+	// if head of linked list needs to be removed.
+	if (position == 0) {
+		list->head = node->next;
+		free(node);
+	} else {
+		// Finding previous node of the node to be deleted.
+		for (int i = 0; prev != NULL && i < position - 1; i++) {
+			prev = prev->next;
+			// if given position for deleting node is more than number of nodes
+			if (prev == NULL || prev->next == NULL) {
+				return;
+			}
+		}
+		node = prev->next;
+		prev->next = node->next;
+		free(node);
+	}
+}
+
+void linked_list_print(LINKED_LIST list) {
+	LINKED_LIST_NODE node = list->head;
+	while (node != NULL) {
+		printf("%d ", node->data);
+		node = node->next;
+	}
+}
 
 int main(void) {
-
+	// -1 0 1 2 3 4 Data
+	//  0 1 2 3 4 5 Index(position)
 	LINKED_LIST mylist;
 	mylist = linked_list_init();
 
@@ -119,6 +139,7 @@ int main(void) {
 
 	linked_list_insert(mylist, 3, 99);
 	linked_list_delete_node_as_key(mylist, 99);
+	linked_list_delete_node_as_position(mylist, 0);
 	linked_list_print(mylist);
 
 	return 0;
