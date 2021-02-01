@@ -4,7 +4,7 @@
  Author      : Mert PEHLİVANCIK
  Version     : 1.1
  Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Description : Linked list operations
  ============================================================================
  */
 
