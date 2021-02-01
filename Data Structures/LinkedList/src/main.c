@@ -1,0 +1,36 @@
+/*
+ ============================================================================
+ Name        : main.c
+ Author      : Mert PEHLİVANCIK
+ Version     : 1.2
+ Copyright   : Your copyright notice
+ Description : Linked list operations
+ ============================================================================
+ */
+#include "LinkedList.h"
+
+int main(void) {
+	LINKED_LIST mylist;
+	mylist = linked_list_init();
+
+	linked_list_append(mylist, 1);
+	linked_list_append(mylist, 2);
+	linked_list_append(mylist, 3);
+	linked_list_append(mylist, 4);
+	linked_list_prepend(mylist, 0);
+	linked_list_prepend(mylist, -1);
+
+	linked_list_insert(mylist, 3, 99);
+	linked_list_delete_node_as_key(mylist, 99);
+	// -1 0 1 2 3 4 Data
+	//  0 1 2 3 4 5 Index(position)
+//	linked_list_delete_node_as_position(mylist, 2);
+//	linked_list_delete_list(mylist);
+	printf("%d\n", linked_list_find_length_iterative(mylist));
+//	printf("%d\n", linked_list_find_length_recursive(mylist->head));
+
+	linked_list_print(mylist);
+
+	return 0;
+}
+

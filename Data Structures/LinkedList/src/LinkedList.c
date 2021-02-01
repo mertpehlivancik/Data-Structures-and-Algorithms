@@ -2,32 +2,21 @@
  ============================================================================
  Name        : LinkedList.c
  Author      : Mert PEHLİVANCIK
- Version     : 1.1
+ Version     : 1.2
  Copyright   : Your copyright notice
  Description : Linked list operations
  ============================================================================
  */
+#include "LinkedList.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct LINKED_LIST_NODE_s *LINKED_LIST_NODE;
-typedef struct LINKED_LIST_NODE_s {
-	int data;
-	LINKED_LIST_NODE next;
-} LINKED_LIST_NODE_t[1];
-
-typedef struct LINKED_LIST_s *LINKED_LIST;
-typedef struct LINKED_LIST_s {
-	LINKED_LIST_NODE head;
-} LINKED_LIST_t[1];
-
+// Creating linked list.
 LINKED_LIST linked_list_init() {
 	LINKED_LIST list = (LINKED_LIST) malloc(sizeof(LINKED_LIST_t));
 	list->head = NULL;
 	return list;
 }
 
+// Creating node.
 LINKED_LIST_NODE linked_list_node_init(int data) {
 	LINKED_LIST_NODE node = (LINKED_LIST_NODE) malloc(
 			sizeof(LINKED_LIST_NODE_t));
@@ -36,6 +25,7 @@ LINKED_LIST_NODE linked_list_node_init(int data) {
 	return node;
 }
 
+// Adding node after last node of linked list.
 void linked_list_append(LINKED_LIST list, int data) {
 	if (list->head == NULL) {
 		list->head = linked_list_node_init(data);
@@ -48,6 +38,7 @@ void linked_list_append(LINKED_LIST list, int data) {
 	}
 }
 
+// Adding node before first node of linked list.
 void linked_list_prepend(LINKED_LIST list, int data) {
 	if (list->head == NULL) {
 		list->head = linked_list_node_init(data);
@@ -58,6 +49,7 @@ void linked_list_prepend(LINKED_LIST list, int data) {
 	}
 }
 
+// Adding node to linked list as a given position.
 void linked_list_insert(LINKED_LIST list, int position, int data) {
 	LINKED_LIST_NODE temp = list->head;
 	if (position == 0) {
@@ -77,6 +69,7 @@ void linked_list_insert(LINKED_LIST list, int position, int data) {
 	}
 }
 
+// Deleting node as a given key value.
 void linked_list_delete_node_as_key(LINKED_LIST list, int data) {
 	LINKED_LIST_NODE prev = list->head;
 	while (prev != NULL) {
@@ -91,6 +84,7 @@ void linked_list_delete_node_as_key(LINKED_LIST list, int data) {
 	free(node);
 }
 
+// Deleting node as a given position of list.
 void linked_list_delete_node_as_position(LINKED_LIST list, int position) {
 	if (list == NULL) {
 		return;
@@ -127,6 +121,26 @@ void linked_list_delete_list(LINKED_LIST list) {
 	}
 }
 
+// Finding length of linked list using iterative function.
+int linked_list_find_length_iterative(LINKED_LIST list) {
+	LINKED_LIST_NODE node = list->head;
+	int counter = 0;
+	while (node != NULL) {
+		node = node->next;
+		counter++;
+	}
+	return counter;
+}
+
+// Finding length of linked list using recursive function.
+int linked_list_find_length_recursive(LINKED_LIST_NODE node) {
+	if (node == NULL) {
+		return 0;
+	}
+	return 1 + linked_list_find_length_recursive(node->next);
+}
+
+// Printing elements of linked list
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;
 	while (node != NULL) {
@@ -135,25 +149,3 @@ void linked_list_print(LINKED_LIST list) {
 	}
 }
 
-int main(void) {
-	LINKED_LIST mylist;
-	mylist = linked_list_init();
-
-	linked_list_append(mylist, 1);
-	linked_list_append(mylist, 2);
-	linked_list_append(mylist, 3);
-	linked_list_append(mylist, 4);
-	linked_list_prepend(mylist, 0);
-	linked_list_prepend(mylist, -1);
-
-	linked_list_insert(mylist, 3, 99);
-	linked_list_delete_node_as_key(mylist, 99);
-	// -1 0 1 2 3 4 Data
-	//  0 1 2 3 4 5 Index(position)
-	linked_list_delete_node_as_position(mylist, 0);
-	linked_list_delete_list(mylist);
-
-	linked_list_print(mylist);
-
-	return 0;
-}
