@@ -29,7 +29,10 @@ int main(void) {
 	printf("%d\n", linked_list_find_length_iterative(mylist));
 //	printf("%d\n", linked_list_find_length_recursive(mylist->head));
 
-	linked_list_search_element(mylist, 0) ? printf("Yes\n") : printf("No\n");
+	linked_list_search_element_iterative(mylist, 0) ?
+			printf("Yes\n") : printf("No\n");
+	linked_list_search_element_recursive(mylist->head, 5) ?
+			printf("Yes\n") : printf("No\n");
 	linked_list_print(mylist);
 
 	return 0;

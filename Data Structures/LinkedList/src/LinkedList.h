@@ -36,6 +36,7 @@ void linked_list_delete_list(LINKED_LIST list);
 int linked_list_find_length_iterative(LINKED_LIST list);
 int linked_list_find_length_recursive(LINKED_LIST_NODE node);
 void linked_list_print(LINKED_LIST list);
-bool linked_list_search_element(LINKED_LIST list, int data);
+bool linked_list_search_element_iterative(LINKED_LIST list, int data);
+bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data);
 
 #endif /* LINKEDLIST_H_ */

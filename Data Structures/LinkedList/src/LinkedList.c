@@ -140,8 +140,8 @@ int linked_list_find_length_recursive(LINKED_LIST_NODE node) {
 	return 1 + linked_list_find_length_recursive(node->next);
 }
 
-// Searching given value from given linked list. If value is in linked list, function returns true. If not, return false.
-bool linked_list_search_element(LINKED_LIST list, int data) {
+// Searching given value from given linked list with iterative function. If value is in linked list, function returns true. If not, return false.
+bool linked_list_search_element_iterative(LINKED_LIST list, int data) {
 	LINKED_LIST_NODE node = list->head;
 	while (node != NULL) {
 		if (node->data == data) {
@@ -150,6 +150,16 @@ bool linked_list_search_element(LINKED_LIST list, int data) {
 		node = node->next;
 	}
 	return false;
+}
+
+// Searching given value from given linked list with recursive function. If value is in linked list, function returns true. If not, return false.
+bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data){
+	if(node==NULL){
+		return false;
+	}else if(node->data == data){
+		return true;
+	}
+	return linked_list_search_element_recursive(node->next,data);
 }
 
 // Printing elements of linked list
