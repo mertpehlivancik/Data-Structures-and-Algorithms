@@ -140,6 +140,18 @@ int linked_list_find_length_recursive(LINKED_LIST_NODE node) {
 	return 1 + linked_list_find_length_recursive(node->next);
 }
 
+// Searching given value from given linked list. If value is in linked list, function returns true. If not, return false.
+bool linked_list_search_element(LINKED_LIST list, int data) {
+	LINKED_LIST_NODE node = list->head;
+	while (node != NULL) {
+		if (node->data == data) {
+			return true;
+		}
+		node = node->next;
+	}
+	return false;
+}
+
 // Printing elements of linked list
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;

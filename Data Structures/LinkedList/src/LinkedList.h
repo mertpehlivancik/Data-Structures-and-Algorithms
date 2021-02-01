@@ -4,7 +4,7 @@
  Author      : Mert PEHLİVANCIK
  Version     : 1.2
  Copyright   : Your copyright notice
- Description : Linked list structures and function definitions
+ Description : Linked list structures and functions definitions
  ============================================================================
  */
 
@@ -12,6 +12,7 @@
 #define LINKEDLIST_H_
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct LINKED_LIST_NODE_s *LINKED_LIST_NODE;
 typedef struct LINKED_LIST_NODE_s {
@@ -35,5 +36,6 @@ void linked_list_delete_list(LINKED_LIST list);
 int linked_list_find_length_iterative(LINKED_LIST list);
 int linked_list_find_length_recursive(LINKED_LIST_NODE node);
 void linked_list_print(LINKED_LIST list);
+bool linked_list_search_element(LINKED_LIST list, int data);
 
 #endif /* LINKEDLIST_H_ */
