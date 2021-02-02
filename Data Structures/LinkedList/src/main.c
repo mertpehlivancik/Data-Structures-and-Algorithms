@@ -9,20 +9,6 @@
  */
 #include "LinkedList.h"
 
-int linked_list_count_repetitive_number(LINKED_LIST list, int number) {
-	LINKED_LIST_NODE node = list->head;
-	int counter = 0;
-	while (node != NULL) {
-		if (node->data == number) {
-			counter++;
-			node = node->next;
-		} else {
-			node = node->next;
-		}
-	}
-	return counter;
-}
-
 int main(void) {
 	LINKED_LIST mylist;
 	mylist = linked_list_init();

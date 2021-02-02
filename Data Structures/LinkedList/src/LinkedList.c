@@ -232,6 +232,7 @@ LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list) {
 	}
 }
 
+// Counting given number how many times was repeated in the given linked list.
 int linked_list_count_repetitive_number(LINKED_LIST list, int number) {
 	LINKED_LIST_NODE node = list->head;
 	int counter = 0;
@@ -246,7 +247,7 @@ int linked_list_count_repetitive_number(LINKED_LIST list, int number) {
 	return counter;
 }
 
-// Printing elements of linked list
+// Printing elements of linked list.
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;
 	while (node != NULL) {

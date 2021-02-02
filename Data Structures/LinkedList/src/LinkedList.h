@@ -35,12 +35,14 @@ void linked_list_delete_node_as_position(LINKED_LIST list, int position);
 void linked_list_delete_list(LINKED_LIST list);
 int linked_list_find_length_iterative(LINKED_LIST list);
 int linked_list_find_length_recursive(LINKED_LIST_NODE node);
-void linked_list_print(LINKED_LIST list);
 bool linked_list_search_element_iterative(LINKED_LIST list, int data);
 bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data);
 int linked_list_getNth_data(LINKED_LIST list, int getNth);
 LINKED_LIST_NODE linked_list_getNth_node(LINKED_LIST_NODE node, int getNth);
+LINKED_LIST_NODE linked_list_find_middle_node_with_fastnodeMethod(
+		LINKED_LIST list);
 LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list);
 int linked_list_count_repetitive_number(LINKED_LIST list, int number);
+void linked_list_print(LINKED_LIST list);
 
 #endif /* LINKEDLIST_H_ */
