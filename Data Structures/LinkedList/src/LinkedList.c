@@ -153,13 +153,36 @@ bool linked_list_search_element_iterative(LINKED_LIST list, int data) {
 }
 
 // Searching given value from given linked list with recursive function. If value is in linked list, function returns true. If not, return false.
-bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data){
-	if(node==NULL){
+bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data) {
+	if (node == NULL) {
 		return false;
-	}else if(node->data == data){
+	} else if (node->data == data) {
 		return true;
 	}
-	return linked_list_search_element_recursive(node->next,data);
+	return linked_list_search_element_recursive(node->next, data);
+}
+
+// The function returns one of list's data from given position
+int linked_list_getNth_data(LINKED_LIST list, int getNth) {
+	LINKED_LIST_NODE node = list->head;
+	for (int i = 0; i < getNth; i++) {
+		node = node->next;
+	}
+	return node->data;
+}
+
+// The function returns one of list's node from given position
+LINKED_LIST_NODE linked_list_getNth_node(LINKED_LIST_NODE node, int getNth) {
+	int length = linked_list_find_length_recursive(node);
+	if (getNth > 0 && getNth <= length - 1) {
+		for (int i = 0; i < getNth; i++) {
+			node = node->next;
+		}
+		return node;
+	} else {
+		node = NULL;
+		return node;
+	}
 }
 
 // Printing elements of linked list

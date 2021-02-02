@@ -9,25 +9,6 @@
  */
 #include "LinkedList.h"
 
-//int linked_list_getNth_data(LINKED_LIST list, int getNth){
-//	LINKED_LIST_NODE node = list->head;
-//		for(int i=0;i<getNth;i++){
-//			node = node->next;
-//		}
-//		return node->data;
-//
-//}
-//
-//LINKED_LIST_NODE linked_list_getNth_node(LINKED_LIST list, int getNth){
-//	LINKED_LIST_NODE node = list->head;
-//	int length = linked_list_find_length_recursive(node);
-//	if(getNth)
-//	for(int i=0;i<getNth;i++){
-//		node = node->next;
-//	}
-//	return node->data;
-//}
-
 int main(void) {
 	LINKED_LIST mylist;
 	mylist = linked_list_init();
@@ -53,7 +34,14 @@ int main(void) {
 	linked_list_search_element_recursive(mylist->head, 5) ?
 			printf("Yes\n") : printf("No\n");
 
-//	printf("%d\n", linked_list_getNth_data(mylist, 5));
+	printf("%d\n", linked_list_getNth_data(mylist, 5));
+	LINKED_LIST_NODE node = linked_list_getNth_node(mylist->head, 10);
+	if (node == NULL) {
+		printf("Node is NULL\n");
+	} else {
+		printf("%d\n", node->data);
+	}
+
 	linked_list_print(mylist);
 	return 0;
 }
