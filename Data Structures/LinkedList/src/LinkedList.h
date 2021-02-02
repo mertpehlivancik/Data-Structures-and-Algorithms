@@ -41,5 +41,6 @@ bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data);
 int linked_list_getNth_data(LINKED_LIST list, int getNth);
 LINKED_LIST_NODE linked_list_getNth_node(LINKED_LIST_NODE node, int getNth);
 LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list);
+int linked_list_count_repetitive_number(LINKED_LIST list, int number);
 
 #endif /* LINKEDLIST_H_ */

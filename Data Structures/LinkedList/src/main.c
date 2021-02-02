@@ -9,6 +9,20 @@
  */
 #include "LinkedList.h"
 
+int linked_list_count_repetitive_number(LINKED_LIST list, int number) {
+	LINKED_LIST_NODE node = list->head;
+	int counter = 0;
+	while (node != NULL) {
+		if (node->data == number) {
+			counter++;
+			node = node->next;
+		} else {
+			node = node->next;
+		}
+	}
+	return counter;
+}
+
 int main(void) {
 	LINKED_LIST mylist;
 	mylist = linked_list_init();
@@ -46,6 +60,7 @@ int main(void) {
 //	printf("%d\n", node->data);
 //	LINKED_LIST_NODE node = linked_list_find_middle_node(mylist);
 //	printf("%d\n", node->data);
+//	printf("%d\n", linked_list_count_repetitive_number(mylist, 1));
 
 	linked_list_print(mylist);
 	return 0;
