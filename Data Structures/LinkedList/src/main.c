@@ -26,22 +26,24 @@ int main(void) {
 	//  0 1 2 3 4 5 Index(position)
 //	linked_list_delete_node_as_position(mylist, 2);
 //	linked_list_delete_list(mylist);
-	printf("%d\n", linked_list_find_length_iterative(mylist));
+//	printf("%d\n", linked_list_find_length_iterative(mylist));
 //	printf("%d\n", linked_list_find_length_recursive(mylist->head));
-
-	linked_list_search_element_iterative(mylist, 0) ?
-			printf("Yes\n") : printf("No\n");
-	linked_list_search_element_recursive(mylist->head, 5) ?
-			printf("Yes\n") : printf("No\n");
-
-	printf("%d\n", linked_list_getNth_data(mylist, 5));
-	LINKED_LIST_NODE node = linked_list_getNth_node(mylist->head, 10);
-	if (node == NULL) {
-		printf("Node is NULL\n");
-	} else {
-		printf("%d\n", node->data);
-	}
-
+//
+//	linked_list_search_element_iterative(mylist, 0) ?
+//			printf("Yes\n") : printf("No\n");
+//	linked_list_search_element_recursive(mylist->head, 5) ?
+//			printf("Yes\n") : printf("No\n");
+//
+//	printf("%d\n", linked_list_getNth_data(mylist, 5));
+//	LINKED_LIST_NODE node = linked_list_getNth_node(mylist->head, 10);
+//	if (node == NULL) {
+//		printf("Node is NULL\n");
+//	} else {
+//		printf("%d\n", node->data);
+//	}
+//	LINKED_LIST_NODE node = linked_list_find_middle_node_with_fastnodeMethod(
+//			mylist);
+//	printf("%d\n", node->data);
 	linked_list_print(mylist);
 	return 0;
 }

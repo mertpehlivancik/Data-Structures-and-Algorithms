@@ -185,6 +185,36 @@ LINKED_LIST_NODE linked_list_getNth_node(LINKED_LIST_NODE node, int getNth) {
 	}
 }
 
+// Finding middle node of linked list with fast node method.
+// Explanation of algorithm
+// Definitions: f = fast node, s = slow node, -1 0 1 2 3 4 --> Linked list
+// -1	0	1	2	3	4	NULL
+// fs
+// -1	0	1	2	3	4	NULL
+// 		s	f
+// -1	0	1	2	3	4	NULL
+// 			s		f
+// -1	0	1	2	3	4	NULL
+// 				s			 f
+// s->data is 2 and 2 is middle node of given linked list.
+LINKED_LIST_NODE linked_list_find_middle_node_with_fastnodeMethod(
+		LINKED_LIST list) {
+	LINKED_LIST_NODE slowNode = list->head;
+	LINKED_LIST_NODE fastNode = list->head;
+	if (list != NULL || list->head != NULL) {
+		while (fastNode != NULL && fastNode->next != NULL) {
+			fastNode = fastNode->next->next;
+			slowNode = slowNode->next;
+		}
+		return slowNode;
+	} else {
+		free(fastNode);
+		free(slowNode);
+		list->head = NULL;
+		return list->head;
+	}
+}
+
 // Printing elements of linked list
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;
