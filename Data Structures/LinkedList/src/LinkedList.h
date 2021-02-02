@@ -40,5 +40,6 @@ bool linked_list_search_element_iterative(LINKED_LIST list, int data);
 bool linked_list_search_element_recursive(LINKED_LIST_NODE node, int data);
 int linked_list_getNth_data(LINKED_LIST list, int getNth);
 LINKED_LIST_NODE linked_list_getNth_node(LINKED_LIST_NODE node, int getNth);
+LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list);
 
 #endif /* LINKEDLIST_H_ */

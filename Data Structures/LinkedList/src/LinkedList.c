@@ -215,6 +215,23 @@ LINKED_LIST_NODE linked_list_find_middle_node_with_fastnodeMethod(
 	}
 }
 
+// Finding middle node of linked list using length of linked list
+LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list) {
+	LINKED_LIST_NODE node = list->head;
+	if (list != NULL && list->head != NULL) {
+		int length = linked_list_find_length_iterative(list);
+		length = length / 2;
+		for (int i = 0; i < length; i++) {
+			node = node->next;
+		}
+		return node;
+	} else {
+		free(node);
+		list->head = NULL;
+		return list->head;
+	}
+}
+
 // Printing elements of linked list
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;

@@ -44,6 +44,9 @@ int main(void) {
 //	LINKED_LIST_NODE node = linked_list_find_middle_node_with_fastnodeMethod(
 //			mylist);
 //	printf("%d\n", node->data);
+//	LINKED_LIST_NODE node = linked_list_find_middle_node(mylist);
+//	printf("%d\n", node->data);
+
 	linked_list_print(mylist);
 	return 0;
 }
