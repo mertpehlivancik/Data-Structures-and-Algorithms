@@ -6,6 +6,6 @@
 ![](pic.png)
 <div align="center">Source of imagine is (https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/)</div>
 <br>
-Firstly, two pointer should be defined. One of these is fast pointer and other one is slow pointer. If fast pointer and slow pointer meet at same pointer, there is a loop in this linked list. Above imagine shows us this scenario which was mentioned.
+Firstly, two pointer should be defined. One of these is fast pointer and other one is slow pointer. If fast pointer and slow pointer meet at same pointer, there is a loop in this linked list. Above imagine shows us this scenario which was mentioned. We can think that how to make a pointer faster as other pointer. In this algorithm, fast pointer addresses after two node but slow pointer addresses after one node in every loop while visiting nodes in linked list.
 
 
