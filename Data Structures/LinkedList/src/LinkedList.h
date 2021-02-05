@@ -43,6 +43,7 @@ LINKED_LIST_NODE linked_list_find_middle_node_with_fastnodeMethod(
 		LINKED_LIST list);
 LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list);
 int linked_list_count_repetitive_number(LINKED_LIST list, int number);
+bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST mylist);
 void linked_list_print(LINKED_LIST list);
 
 #endif /* LINKEDLIST_H_ */

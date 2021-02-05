@@ -247,6 +247,20 @@ int linked_list_count_repetitive_number(LINKED_LIST list, int number) {
 	return counter;
 }
 
+// Finding loop in linked list with Floyd's Cycle Finding Algorithm
+bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST mylist) {
+	LINKED_LIST_NODE slowNode = mylist->head;
+	LINKED_LIST_NODE fastNode = mylist->head;
+	while (fastNode != NULL && fastNode->next != NULL) {
+		slowNode = slowNode->next;
+		fastNode = fastNode->next->next;
+		if (fastNode == slowNode) {
+			return true;
+		}
+	}
+	return false;
+}
+
 // Printing elements of linked list.
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;
