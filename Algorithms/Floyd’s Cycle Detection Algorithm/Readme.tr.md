@@ -6,3 +6,6 @@ indirebilirsiniz.
 
 ## Açıklama
 ![](pic.png)
+<div align="center">Görselin kaynağı (https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/)</div>
+<br>
+İlk olarak iki tane pointer tanımlanmalıdır. Bunlardan birisi fast pointer iken diğeri ise slow pointer'dır. Algotitmaya göre eğer tanımlanan bu iki pointer aynı düğümde(node) karşılaşırlarsa bu linked list'de loop(döngü) vardır. Yukarıdaki görselde bu senaryo açıkça gösterilmiştir.
