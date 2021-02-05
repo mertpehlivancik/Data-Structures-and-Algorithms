@@ -3,6 +3,6 @@
 - If you preper, you can read this document at [Turkish](Readme.tr.md).
 
 ## Explanation
-![](Detect-loop-in-a-linked-list.png)
+![](pic.png)
 
 
