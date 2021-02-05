@@ -4,6 +4,6 @@
 
 ## Explanation
 ![](pic.png)
-<div align="center">Source of imagine is [geeksforgeeks](https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/)</div>
+<div align="center">Source of imagine is [a link](https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/)</div>
 
 
