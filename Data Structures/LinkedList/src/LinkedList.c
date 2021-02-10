@@ -261,6 +261,23 @@ bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST mylist)
 	return false;
 }
 
+// This function detects loop in given linked list and count how many nodes are present in loop.
+int linked_list_detectAndCountLoop(LINKED_LIST mylist) {
+	int counter = 0;
+	LINKED_LIST_NODE slowNode = mylist->head;
+	LINKED_LIST_NODE fastNode = mylist->head;
+	while (fastNode != NULL && fastNode->next != NULL) {
+		slowNode = slowNode->next;
+		fastNode = fastNode->next->next;
+		counter++;
+		if (fastNode == slowNode) {
+			return counter;
+		}
+	}
+	counter = counter - counter;
+	return counter;
+}
+
 // Printing elements of linked list.
 void linked_list_print(LINKED_LIST list) {
 	LINKED_LIST_NODE node = list->head;

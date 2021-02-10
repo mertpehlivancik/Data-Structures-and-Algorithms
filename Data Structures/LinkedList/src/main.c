@@ -72,6 +72,11 @@ int main(void) {
 			printf("Yes\n") : printf("No\n");
 	linked_list_detect_loop_with_FloydCycleFindingAlgorithm(mylist) ?
 			printf("Yes\n") : printf("No\n");
+
+	printf("%d\n", linked_list_detectAndCountLoop(mylist2));
+	// There is no loop. That's why function returns 0 in mylist.
+	printf("%d\n", linked_list_detectAndCountLoop(mylist));
+
 	linked_list_print(mylist);
 	return 0;
 }
