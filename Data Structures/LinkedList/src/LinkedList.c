@@ -248,9 +248,9 @@ int linked_list_count_repetitive_number(LINKED_LIST list, int number) {
 }
 
 // Finding loop in linked list with Floyd's Cycle Finding Algorithm
-bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST mylist) {
-	LINKED_LIST_NODE slowNode = mylist->head;
-	LINKED_LIST_NODE fastNode = mylist->head;
+bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST list) {
+	LINKED_LIST_NODE slowNode = list->head;
+	LINKED_LIST_NODE fastNode = list->head;
 	while (fastNode != NULL && fastNode->next != NULL) {
 		slowNode = slowNode->next;
 		fastNode = fastNode->next->next;
@@ -262,10 +262,10 @@ bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST mylist)
 }
 
 // This function detects loop in given linked list and count how many nodes are present in loop.
-int linked_list_detectAndCountLoop(LINKED_LIST mylist) {
+int linked_list_detectAndCountLoop(LINKED_LIST list) {
 	int counter = 0;
-	LINKED_LIST_NODE slowNode = mylist->head;
-	LINKED_LIST_NODE fastNode = mylist->head;
+	LINKED_LIST_NODE slowNode = list->head;
+	LINKED_LIST_NODE fastNode = list->head;
 	while (fastNode != NULL && fastNode->next != NULL) {
 		slowNode = slowNode->next;
 		fastNode = fastNode->next->next;
@@ -276,6 +276,41 @@ int linked_list_detectAndCountLoop(LINKED_LIST mylist) {
 	}
 	counter = counter - counter;
 	return counter;
+}
+
+// This function swap given data of nodes
+void linked_list_swap_data(LINKED_LIST_NODE first_node,
+		LINKED_LIST_NODE second_node) {
+	LINKED_LIST_NODE temp = linked_list_node_init(first_node->data);
+	first_node->data = second_node->data;
+	second_node->data = temp->data;
+	free(temp);
+}
+
+// This function controls that data of given linked list were sorted or not.
+bool linked_list_isSorted(LINKED_LIST list) {
+	LINKED_LIST_NODE node = list->head;
+	while (node->next != NULL) {
+		if (node->data > node->next->data) {
+			return false;
+		}
+		node = node->next;
+	}
+	return true;
+}
+
+// This function sorts given linked list with bubble sort algorithm.
+// This function needs "linked_list_swap_data" and "linked_list_isSorted" functions for running.
+void linked_list_bubbleSort(LINKED_LIST list) {
+	while (linked_list_isSorted(list) == false) {
+		LINKED_LIST_NODE node = list->head;
+		while (node->next != NULL) {
+			if (node->data > node->next->data) {
+				linked_list_swap_data(node, node->next);
+			}
+			node = node->next;
+		}
+	}
 }
 
 // Printing elements of linked list.

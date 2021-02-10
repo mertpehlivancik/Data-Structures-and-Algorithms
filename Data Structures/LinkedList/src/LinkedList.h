@@ -43,8 +43,12 @@ LINKED_LIST_NODE linked_list_find_middle_node_with_fastnodeMethod(
 		LINKED_LIST list);
 LINKED_LIST_NODE linked_list_find_middle_node(LINKED_LIST list);
 int linked_list_count_repetitive_number(LINKED_LIST list, int number);
-bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST mylist);
-int linked_list_detectAndCountLoop(LINKED_LIST mylist);
+bool linked_list_detect_loop_with_FloydCycleFindingAlgorithm(LINKED_LIST list);
+int linked_list_detectAndCountLoop(LINKED_LIST list);
+void linked_list_swap_data(LINKED_LIST_NODE first_node,
+		LINKED_LIST_NODE second_node);
+bool linked_list_isSorted(LINKED_LIST list);
+void linked_list_bubbleSort(LINKED_LIST list);
 void linked_list_print(LINKED_LIST list);
 
 #endif /* LINKEDLIST_H_ */
