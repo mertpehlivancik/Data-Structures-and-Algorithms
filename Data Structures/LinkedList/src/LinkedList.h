@@ -49,6 +49,9 @@ void linked_list_swap_data(LINKED_LIST_NODE first_node,
 		LINKED_LIST_NODE second_node);
 bool linked_list_isSorted(LINKED_LIST list);
 void linked_list_bubbleSort(LINKED_LIST list);
+void linked_list_delete_node_as_givenNode(LINKED_LIST list,
+		LINKED_LIST_NODE node);
+void linked_list_remove_duplicates_sortedList(LINKED_LIST list);
 void linked_list_print(LINKED_LIST list);
 
 #endif /* LINKEDLIST_H_ */

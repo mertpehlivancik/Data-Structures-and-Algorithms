@@ -27,6 +27,11 @@ int main(void) {
 
 	linked_list_insert(mylist, 3, 99);
 	linked_list_delete_node_as_key(mylist, 99);
+
+//	linked_list_delete_node_as_key(mylist, 6);
+//	linked_list_delete_node_as_key(mylist, 7);
+//	linked_list_delete_node_as_key(mylist, 8);
+//	linked_list_delete_node_as_key(mylist, 9);
 	// -1 0 1 2 3 4 Data
 	//  0 1 2 3 4 5 Index(position)
 //	linked_list_delete_node_as_position(mylist, 2);
@@ -53,7 +58,11 @@ int main(void) {
 //	printf("%d\n", node->data);
 //	printf("%d\n", linked_list_count_repetitive_number(mylist, 1));
 
+	linked_list_append(mylist, 5);
+	linked_list_append(mylist, 5);
+	linked_list_append(mylist, 1);
 	linked_list_bubbleSort(mylist);
+	linked_list_remove_duplicates_sortedList(mylist);
 
 	linked_list_print(mylist);
 	return 0;

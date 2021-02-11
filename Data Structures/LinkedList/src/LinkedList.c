@@ -70,8 +70,14 @@ void linked_list_insert(LINKED_LIST list, int position, int data) {
 }
 
 // Deleting node as a given key value.
+// If one value, which is not in list, is given, function doesn't run. Solve it.
 void linked_list_delete_node_as_key(LINKED_LIST list, int data) {
 	LINKED_LIST_NODE prev = list->head;
+	if (prev->data == data) {
+		list->head = prev->next;
+		free(prev);
+		return;
+	}
 	while (prev != NULL) {
 		if (prev->next->data == data) {
 			break;
@@ -310,6 +316,37 @@ void linked_list_bubbleSort(LINKED_LIST list) {
 			}
 			node = node->next;
 		}
+	}
+}
+
+// Given node is deleted in given linked list
+void linked_list_delete_node_as_givenNode(LINKED_LIST list,
+		LINKED_LIST_NODE node) {
+	LINKED_LIST_NODE prev = list->head;
+	if (node == prev) {
+		list->head = node->next;
+		free(node);
+		return;
+	}
+	while (prev->next != node) {
+		if (prev->next == node) {
+			break;
+		}
+		prev = prev->next;
+	}
+	prev->next = node->next;
+	free(node);
+}
+
+// Remove duplicates from a sorted linked list
+void linked_list_remove_duplicates_sortedList(LINKED_LIST list) {
+	LINKED_LIST_NODE node = list->head;
+	while (node->next != NULL) {
+		if (node->data == node->next->data) {
+			linked_list_delete_node_as_givenNode(list, node->next);
+			continue;
+		}
+		node = node->next;
 	}
 }
 
