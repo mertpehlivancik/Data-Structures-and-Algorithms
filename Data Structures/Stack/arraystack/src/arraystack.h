@@ -1,11 +1,10 @@
 /*
  ============================================================================
- Name        : stack_with_array.h
+ Name        : arraystack.h
  Author      : Mert PEHLİVANCIK
- Version     : 1.0
+ Version     : 1.1
  Copyright   : Your copyright notice
  Description : Implementing Stack using Arrays
- Reference   : https://www.geeksforgeeks.org/
  ============================================================================
  */
 #include <limits.h>
@@ -13,15 +12,17 @@
 #include <stdlib.h>
 
 // A structure to represent a stack
-typedef struct Stack {
+
+typedef struct ARRAY_STACK_s *ARRAY_STACK;
+typedef struct ARRAY_STACK_s {
 	int top;
 	unsigned capacity;
 	int *array;
-} Stack;
+} ARRAY_STACK_t[1];
 
-Stack* createStack(unsigned capacity);
-int isFull(Stack *stack);
-int isEmpty(Stack *stack);
-void push(Stack *stack, int item);
-int pop(Stack *stack);
-int peek(Stack *stack);
+ARRAY_STACK createStack(unsigned capacity);
+int isFull(ARRAY_STACK stack);
+int isEmpty(ARRAY_STACK stack);
+void push(ARRAY_STACK stack, int item);
+int pop(ARRAY_STACK stack);
+int peek(ARRAY_STACK stack);

@@ -2,16 +2,15 @@
  ============================================================================
  Name        : main.c
  Author      : Mert PEHLİVANCIK
- Version     : 1.0
+ Version     : 1.1
  Copyright   : Your copyright notice
- Description : Using Array
- Reference   : https://www.geeksforgeeks.org/
+ Description : Using arraystack
  ============================================================================
  */
-#include "stack_with_array.h"
+#include "arraystack.h"
 
 int main() {
-	Stack *stack = createStack(100);
+	ARRAY_STACK stack = createStack(100);
 
 	push(stack, 10);
 	push(stack, 20);
