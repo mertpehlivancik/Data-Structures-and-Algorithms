@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/arraystack.c=UTF-8
 encoding//src/arraystack.h=UTF-8
+encoding//src/linkedstack.c=UTF-8
+encoding//src/linkedstack.h=UTF-8
 encoding//src/main.c=UTF-8
