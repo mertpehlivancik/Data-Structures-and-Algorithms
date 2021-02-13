@@ -4,7 +4,7 @@
  Author      : Mert PEHLİVANCIK
  Version     : 1.1
  Copyright   : Your copyright notice
- Description : Using arraystack
+ Description : Using stack
  ============================================================================
  */
 #include "arraystack.h"
