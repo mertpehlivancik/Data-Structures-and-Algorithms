@@ -52,3 +52,4 @@ void linkedstack_pop(LINKED_STACK linkedstack) {
 	free(linkedstack->head);
 	linkedstack->head = node;
 }
+

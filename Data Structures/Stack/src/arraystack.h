@@ -20,9 +20,9 @@ typedef struct ARRAY_STACK_s {
 	int *array;
 } ARRAY_STACK_t[1];
 
-ARRAY_STACK createStack(unsigned capacity);
-int isFull(ARRAY_STACK stack);
-int isEmpty(ARRAY_STACK stack);
-void push(ARRAY_STACK stack, int item);
-int pop(ARRAY_STACK stack);
-int peek(ARRAY_STACK stack);
+ARRAY_STACK arraystack_create(unsigned capacity);
+int arraystack_isFull(ARRAY_STACK stack);
+int arraystack_isEmpty(ARRAY_STACK stack);
+void arraystack_push(ARRAY_STACK stack, int item);
+int arraystack_pop(ARRAY_STACK stack);
+int arraystack_peek(ARRAY_STACK stack);

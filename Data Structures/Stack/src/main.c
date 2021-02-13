@@ -11,14 +11,14 @@
 #include "linkedstack.h"
 
 int main() {
-//	ARRAY_STACK stack = createStack(100);
-//	push(stack, 10);
-//	push(stack, 20);
-//	push(stack, 30);
-//	printf("%d is peek of stack\n", peek(stack));
-//	printf("%d popped from stack\n", pop(stack));
-//	printf("%d popped from stack\n", pop(stack));
-//	printf("%d popped from stack\n", pop(stack));
+	ARRAY_STACK stack = arraystack_create(100);
+	arraystack_push(stack, 10);
+	arraystack_push(stack, 20);
+	arraystack_push(stack, 30);
+	printf("%d is peek of stack\n", arraystack_peek(stack));
+	printf("%d popped from stack\n", arraystack_pop(stack));
+	printf("%d popped from stack\n", arraystack_pop(stack));
+	printf("%d popped from stack\n", arraystack_pop(stack));
 
 	LINKED_STACK mylinkedstack = linkedstack_init();
 	linkedstack_push(mylinkedstack, 4);
