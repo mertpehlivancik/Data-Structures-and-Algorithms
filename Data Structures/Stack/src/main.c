@@ -25,6 +25,13 @@ int main() {
 	linkedstack_push(mylinkedstack, 3);
 	linkedstack_push(mylinkedstack, 2);
 	linkedstack_push(mylinkedstack, 1);
+	linkedstack_push(mylinkedstack, 0);
 
+	linkedstack_pop(mylinkedstack);
+	linkedstack_pop(mylinkedstack);
+	linkedstack_pop(mylinkedstack);
+	linkedstack_pop(mylinkedstack);
+	linkedstack_pop(mylinkedstack);
+	linkedstack_pop(mylinkedstack);
 	return 0;
 }
