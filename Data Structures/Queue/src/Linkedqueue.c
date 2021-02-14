@@ -61,3 +61,18 @@ void* linkedqueue_dequeue(LINKED_QUEUE queue) {
 	}
 }
 
+int linkedqueue_getsize(LINKED_QUEUE queue) {
+	int counter = 0;
+	if (queue->head != NULL && queue->tail != NULL) {
+		LINKED_QUEUE_NODE node = queue->head;
+		while (node != queue->tail) {
+			node = node->next;
+			counter++;
+		}
+		return counter + 1;
+	} else {
+		return counter;
+	}
+
+}
+

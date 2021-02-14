@@ -27,6 +27,9 @@ int main(void) {
 	printf("%d is dequeue\n", x);
 	x = *((int*) linkedqueue_dequeue(myqueue));
 	printf("%d is dequeue\n", x);
+
+	printf("%d is size of queue\n", linkedqueue_getsize(myqueue));
+
 	return 0;
 }
 

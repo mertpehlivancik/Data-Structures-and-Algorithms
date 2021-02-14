@@ -29,4 +29,5 @@ LINKED_QUEUE linkedqueue_init();
 LINKED_QUEUE_NODE linkedqueue_node_init(int data);
 void linkedqueue_enqueue(LINKED_QUEUE queue, int data);
 void* linkedqueue_dequeue(LINKED_QUEUE queue);
+int linkedqueue_getsize(LINKED_QUEUE queue);
 #endif /* QUEUE_H_ */
