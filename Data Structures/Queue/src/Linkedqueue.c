@@ -25,8 +25,9 @@ LINKED_QUEUE_NODE linkedqueue_node_init(int data) {
 	return node;
 }
 
-// Add element to tail and remove element from head
+// Add element to tail
 // head(front) tail(rear)
+// Adding element to queue
 void linkedqueue_enqueue(LINKED_QUEUE queue, int data) {
 	if (queue->head == NULL && queue->tail == NULL) {
 		queue->tail = linkedqueue_node_init(data);
@@ -36,3 +37,27 @@ void linkedqueue_enqueue(LINKED_QUEUE queue, int data) {
 		queue->tail = queue->tail->next;
 	}
 }
+
+// Removing element from queue
+// remove element from head
+void* linkedqueue_dequeue(LINKED_QUEUE queue) {
+	if (queue->head == NULL && queue->tail == NULL) {
+		return NULL;
+	} else if (queue->head == queue->tail) {
+		void *data = &queue->tail->data;
+		queue->head = NULL;
+		queue->tail = NULL;
+		return data;
+	} else {
+		LINKED_QUEUE_NODE node = queue->head;
+		node = node->next;
+		void *data = &queue->head->data;
+		// temp was used because if memory address of data isn't changed, data will be deleted with "free(queue->head);".
+		int temp = *((int*) data);
+		data = &temp;
+		free(queue->head);
+		queue->head = node;
+		return data;
+	}
+}
+

@@ -18,6 +18,15 @@ int main(void) {
 	linkedqueue_enqueue(myqueue, 2);
 	linkedqueue_enqueue(myqueue, 3);
 	linkedqueue_enqueue(myqueue, 4);
+
+	int x = *((int*) linkedqueue_dequeue(myqueue));
+	printf("%d is dequeue\n", x);
+	x = *((int*) linkedqueue_dequeue(myqueue));
+	printf("%d is dequeue\n", x);
+	x = *((int*) linkedqueue_dequeue(myqueue));
+	printf("%d is dequeue\n", x);
+	x = *((int*) linkedqueue_dequeue(myqueue));
+	printf("%d is dequeue\n", x);
 	return 0;
 }
 
