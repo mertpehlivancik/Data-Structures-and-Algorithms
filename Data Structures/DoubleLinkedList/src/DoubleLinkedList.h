@@ -28,7 +28,8 @@ typedef struct DOUBLE_LINKED_LIST_s {
 
 DOUBLE_LINKED_LIST double_linked_list_init();
 DOUBLE_LINKED_LIST_NODE double_linked_list_node_init(int data);
-void double_linked_list_node_append(DOUBLE_LINKED_LIST list, int data);
+void double_linked_list_append(DOUBLE_LINKED_LIST list, int data);
+void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data);
 void double_linked_list_print(DOUBLE_LINKED_LIST list);
 
 #endif /* DOUBLELINKEDLIST_H_ */

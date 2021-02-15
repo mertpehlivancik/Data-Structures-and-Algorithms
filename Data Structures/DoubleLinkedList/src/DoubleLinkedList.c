@@ -9,6 +9,7 @@
  */
 #include "DoubleLinkedList.h"
 
+// Creating double linked list
 DOUBLE_LINKED_LIST double_linked_list_init() {
 	DOUBLE_LINKED_LIST list = (DOUBLE_LINKED_LIST) malloc(
 			sizeof(DOUBLE_LINKED_LIST_t));
@@ -16,6 +17,7 @@ DOUBLE_LINKED_LIST double_linked_list_init() {
 	return list;
 }
 
+// Creating double linked list node
 DOUBLE_LINKED_LIST_NODE double_linked_list_node_init(int data) {
 	DOUBLE_LINKED_LIST_NODE node = (DOUBLE_LINKED_LIST_NODE) malloc(
 			sizeof(DOUBLE_LINKED_LIST_NODE_t));
@@ -25,7 +27,8 @@ DOUBLE_LINKED_LIST_NODE double_linked_list_node_init(int data) {
 	return node;
 }
 
-void double_linked_list_node_append(DOUBLE_LINKED_LIST list, int data) {
+// Adding node after last node of double linked list.
+void double_linked_list_append(DOUBLE_LINKED_LIST list, int data) {
 	if (list->head == NULL) {
 		list->head = double_linked_list_node_init(data);
 	} else {
@@ -38,6 +41,12 @@ void double_linked_list_node_append(DOUBLE_LINKED_LIST list, int data) {
 	}
 }
 
+// Adding node before first node of given double linked list
+void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data){
+
+}
+
+// This function prints given double linked list as node by node.
 void double_linked_list_print(DOUBLE_LINKED_LIST list) {
 	DOUBLE_LINKED_LIST_NODE node = list->head;
 	if (node == NULL) {

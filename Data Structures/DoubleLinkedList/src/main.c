@@ -11,13 +11,12 @@
 
 int main(void) {
 	DOUBLE_LINKED_LIST mylist = double_linked_list_init();
-	double_linked_list_node_append(mylist, 0);
-	double_linked_list_node_append(mylist, 1);
-	double_linked_list_node_append(mylist, 2);
-	double_linked_list_node_append(mylist, 3);
+	double_linked_list_append(mylist, 0);
+	double_linked_list_append(mylist, 1);
+	double_linked_list_append(mylist, 2);
+	double_linked_list_append(mylist, 3);
 
 	double_linked_list_print(mylist);
 	return 0;
 }
-
 
