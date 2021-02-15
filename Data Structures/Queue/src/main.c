@@ -18,8 +18,10 @@ int main(void) {
 	linkedqueue_enqueue(myqueue, 2);
 	linkedqueue_enqueue(myqueue, 3);
 	linkedqueue_enqueue(myqueue, 4);
-
+	printf("%d is size of queue\n", linkedqueue_getsize(myqueue));
 	linkedqueue_print(myqueue);
+
+//	linkedqueue_delete(myqueue);
 
 	int x = *((int*) linkedqueue_dequeue(myqueue));
 	printf("%d is dequeue\n", x);
@@ -30,7 +32,6 @@ int main(void) {
 	x = *((int*) linkedqueue_dequeue(myqueue));
 	printf("%d is dequeue\n", x);
 
-	printf("%d is size of queue\n", linkedqueue_getsize(myqueue));
 
 	return 0;
 }

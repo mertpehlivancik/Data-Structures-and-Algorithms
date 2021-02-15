@@ -90,3 +90,18 @@ void linkedqueue_print(LINKED_QUEUE queue) {
 	}
 }
 
+// This function deletes queue as node by node.
+void linkedqueue_delete(LINKED_QUEUE queue) {
+	while (queue->head != queue->tail) {
+		LINKED_QUEUE_NODE node = queue->head;
+		node = node->next;
+		free(queue->head);
+		queue->head = node;
+	}
+	if (queue->head == queue->tail) {
+		free(queue->head);
+		free(queue->tail);
+		free(queue);
+	}
+}
+

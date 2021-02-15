@@ -31,4 +31,5 @@ void linkedqueue_enqueue(LINKED_QUEUE queue, int data);
 void* linkedqueue_dequeue(LINKED_QUEUE queue);
 int linkedqueue_getsize(LINKED_QUEUE queue);
 void linkedqueue_print(LINKED_QUEUE queue);
+void linkedqueue_delete(LINKED_QUEUE queue);
 #endif /* QUEUE_H_ */
