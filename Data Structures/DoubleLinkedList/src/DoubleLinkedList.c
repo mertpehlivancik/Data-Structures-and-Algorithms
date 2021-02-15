@@ -25,3 +25,28 @@ DOUBLE_LINKED_LIST_NODE double_linked_list_node_init(int data) {
 	return node;
 }
 
+void double_linked_list_node_append(DOUBLE_LINKED_LIST list, int data) {
+	if (list->head == NULL) {
+		list->head = double_linked_list_node_init(data);
+	} else {
+		DOUBLE_LINKED_LIST_NODE node = list->head;
+		while (node->next != NULL) {
+			node = node->next;
+		}
+		node->next = double_linked_list_node_init(data);
+		node->next->prev = node;
+	}
+}
+
+void double_linked_list_print(DOUBLE_LINKED_LIST list) {
+	DOUBLE_LINKED_LIST_NODE node = list->head;
+	if (node == NULL) {
+		return;
+	} else {
+		while (node->next != NULL) {
+			printf("%d\t", node->data);
+			node = node->next;
+		}
+		printf("%d", node->data);
+	}
+}
