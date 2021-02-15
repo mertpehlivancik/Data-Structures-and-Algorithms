@@ -42,8 +42,15 @@ void double_linked_list_append(DOUBLE_LINKED_LIST list, int data) {
 }
 
 // Adding node before first node of given double linked list
-void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data){
-
+void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data) {
+	DOUBLE_LINKED_LIST_NODE node = double_linked_list_node_init(data);
+	if (list->head == NULL) {
+		list->head = node;
+	} else {
+		node->next = list->head;
+		list->head->prev = node;
+		list->head = node;
+	}
 }
 
 // This function prints given double linked list as node by node.
