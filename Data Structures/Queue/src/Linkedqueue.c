@@ -61,6 +61,7 @@ void* linkedqueue_dequeue(LINKED_QUEUE queue) {
 	}
 }
 
+// This function returns size of given queue.
 int linkedqueue_getsize(LINKED_QUEUE queue) {
 	int counter = 0;
 	if (queue->head != NULL && queue->tail != NULL) {
