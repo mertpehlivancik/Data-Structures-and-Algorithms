@@ -73,6 +73,19 @@ int linkedqueue_getsize(LINKED_QUEUE queue) {
 	} else {
 		return counter;
 	}
+}
 
+// Printing queue from head to tail.
+void linkedqueue_print(LINKED_QUEUE queue) {
+	if (queue->head == NULL) {
+		return;
+	} else {
+		LINKED_QUEUE_NODE node = queue->head;
+		while (node != queue->tail) {
+			printf("%d ", node->data);
+			node = node->next;
+		}
+		printf("%d\n", node->data);
+	}
 }
 

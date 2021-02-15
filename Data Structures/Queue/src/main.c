@@ -19,6 +19,8 @@ int main(void) {
 	linkedqueue_enqueue(myqueue, 3);
 	linkedqueue_enqueue(myqueue, 4);
 
+	linkedqueue_print(myqueue);
+
 	int x = *((int*) linkedqueue_dequeue(myqueue));
 	printf("%d is dequeue\n", x);
 	x = *((int*) linkedqueue_dequeue(myqueue));
