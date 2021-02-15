@@ -29,7 +29,7 @@ LINKED_STACK linkedstack_init();
 LINKED_STACK_NODE linkedstack_node_init(int data);
 bool linkedstack_isEmpty(LINKED_STACK linkedstack);
 void linkedstack_push(LINKED_STACK linkedstack, int data);
-void linkedstack_pop(LINKED_STACK linkedstack);
+void* linkedstack_pop(LINKED_STACK linkedstack);
 void linkedstack_print(LINKED_STACK linkedstack);
 
 #endif /* LINKEDSTACK_H_ */

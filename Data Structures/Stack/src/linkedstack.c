@@ -43,13 +43,18 @@ void linkedstack_push(LINKED_STACK linkedstack, int data) {
 }
 
 // This function pop data to linkedstack with "last in first out(LIFO)" principle.
-void linkedstack_pop(LINKED_STACK linkedstack) {
+void* linkedstack_pop(LINKED_STACK linkedstack) {
 	if (linkedstack->head == NULL) {
 		printf("LinkedStack is underflow");
-		return;
+		return NULL;
 	}
 	LINKED_STACK_NODE node = linkedstack->head->next;
+	void *data = &linkedstack->head->data;
+	// temp was used because if memory address of data isn't changed, data will be deleted with "free(queue->head);".
+	int temp = *((int*) data);
+	data = &temp;
 	free(linkedstack->head);
 	linkedstack->head = node;
+	return data;
 }
 

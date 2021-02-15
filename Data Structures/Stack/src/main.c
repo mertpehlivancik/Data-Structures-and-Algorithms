@@ -27,11 +27,15 @@ int main() {
 	linkedstack_push(mylinkedstack, 1);
 	linkedstack_push(mylinkedstack, 0);
 
-	linkedstack_pop(mylinkedstack);
-	linkedstack_pop(mylinkedstack);
-	linkedstack_pop(mylinkedstack);
-	linkedstack_pop(mylinkedstack);
-	linkedstack_pop(mylinkedstack);
-	linkedstack_pop(mylinkedstack);
+	int x = *((int*) linkedstack_pop(mylinkedstack));
+	printf("%d is popped from linkedstack\n", x);
+	x = *((int*) linkedstack_pop(mylinkedstack));
+	printf("%d is popped from linkedstack\n", x);
+	x = *((int*) linkedstack_pop(mylinkedstack));
+	printf("%d is popped from linkedstack\n", x);
+	x = *((int*) linkedstack_pop(mylinkedstack));
+	printf("%d is popped from linkedstack\n", x);
+	x = *((int*) linkedstack_pop(mylinkedstack));
+	printf("%d is popped from linkedstack", x);
 	return 0;
 }
