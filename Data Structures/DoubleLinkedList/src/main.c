@@ -16,7 +16,8 @@ int main(void) {
 	double_linked_list_append(mylist, 1);
 	double_linked_list_append(mylist, 2);
 	double_linked_list_append(mylist, 3);
-	double_linked_list_prepend(mylist, -2);
+	double_linked_list_prepend(mylist, -3);
+	double_linked_list_insert(mylist,1,-2);
 
 	double_linked_list_print(mylist);
 	return 0;

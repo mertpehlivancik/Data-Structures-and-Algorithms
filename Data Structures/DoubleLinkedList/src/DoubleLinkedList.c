@@ -53,7 +53,7 @@ void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data) {
 	}
 }
 
-// This wasn't completed.
+// This function inserts given value to given position in given double linked list.
 void double_linked_list_insert(DOUBLE_LINKED_LIST list, int position, int data) {
 	if(position == 0){
 		double_linked_list_prepend(list, data);
@@ -61,13 +61,16 @@ void double_linked_list_insert(DOUBLE_LINKED_LIST list, int position, int data) 
 		DOUBLE_LINKED_LIST_NODE temp = list->head;
 		DOUBLE_LINKED_LIST_NODE node = double_linked_list_node_init(data);
 		while(position != 1){
+			if(temp->next == NULL){
+				return;
+			}
 			temp = temp->next;
 			position--;
 		}
 		node->next = temp->next;
+		node->prev = temp;
 		temp->next->prev = node;
 		temp->next = node;
-		node->prev = temp;
 	}
 }
 
