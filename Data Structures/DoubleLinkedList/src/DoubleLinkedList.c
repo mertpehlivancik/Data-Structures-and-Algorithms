@@ -53,6 +53,24 @@ void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data) {
 	}
 }
 
+// This wasn't completed.
+void double_linked_list_insert(DOUBLE_LINKED_LIST list, int position, int data) {
+	if(position == 0){
+		double_linked_list_prepend(list, data);
+	}else{
+		DOUBLE_LINKED_LIST_NODE temp = list->head;
+		DOUBLE_LINKED_LIST_NODE node = double_linked_list_node_init(data);
+		while(position != 1){
+			temp = temp->next;
+			position--;
+		}
+		node->next = temp->next;
+		temp->next->prev = node;
+		temp->next = node;
+		node->prev = temp;
+	}
+}
+
 // This function prints given double linked list as node by node.
 void double_linked_list_print(DOUBLE_LINKED_LIST list) {
 	DOUBLE_LINKED_LIST_NODE node = list->head;
