@@ -20,6 +20,7 @@ int main(void) {
 	double_linked_list_prepend(mylist, -3);
 	double_linked_list_insert(mylist, 1, -2);
 	double_linked_list_delete_node_as_position(mylist, 6);
+//	double_linked_list_delete_list(mylist);
 	double_linked_list_print(mylist);
 	return 0;
 }

@@ -102,6 +102,18 @@ void double_linked_list_delete_node_as_position(DOUBLE_LINKED_LIST list,
 	}
 }
 
+// Deleting all double linked list as node by node from memory.
+void double_linked_list_delete_list(DOUBLE_LINKED_LIST list) {
+	DOUBLE_LINKED_LIST_NODE node = list->head;
+	while (node->next != NULL) {
+		node = node->next;
+		free(list->head);
+		list->head = node;
+	}
+	free(list->head);
+	free(list);
+}
+
 // This function prints given double linked list as node by node.
 void double_linked_list_print(DOUBLE_LINKED_LIST list) {
 	DOUBLE_LINKED_LIST_NODE node = list->head;
