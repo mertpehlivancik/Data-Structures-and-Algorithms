@@ -55,13 +55,13 @@ void double_linked_list_prepend(DOUBLE_LINKED_LIST list, int data) {
 
 // This function inserts given value to given position in given double linked list.
 void double_linked_list_insert(DOUBLE_LINKED_LIST list, int position, int data) {
-	if(position == 0){
+	if (position == 0) {
 		double_linked_list_prepend(list, data);
-	}else{
+	} else {
 		DOUBLE_LINKED_LIST_NODE temp = list->head;
 		DOUBLE_LINKED_LIST_NODE node = double_linked_list_node_init(data);
-		while(position != 1){
-			if(temp->next == NULL){
+		while (position != 1) {
+			if (temp->next == NULL) {
 				return;
 			}
 			temp = temp->next;
@@ -71,6 +71,34 @@ void double_linked_list_insert(DOUBLE_LINKED_LIST list, int position, int data) 
 		node->prev = temp;
 		temp->next->prev = node;
 		temp->next = node;
+	}
+}
+
+// This function deletes node from given position in given list.
+void double_linked_list_delete_node_as_position(DOUBLE_LINKED_LIST list,
+		unsigned int position) {
+	DOUBLE_LINKED_LIST_NODE node = list->head;
+	if (position == 0) {
+		node = node->next;
+		node->prev = NULL;
+		free(list->head);
+		list->head = node;
+	} else {
+		while (position != 0) {
+			node = node->next;
+			if (node == NULL) {
+				return;
+			}
+			position--;
+		}
+		if (node->next != NULL) {
+			node->prev->next = node->next;
+			node->next->prev = node->prev;
+			free(node);
+		} else {
+			node->prev->next = node->next;
+			free(node);
+		}
 	}
 }
 
