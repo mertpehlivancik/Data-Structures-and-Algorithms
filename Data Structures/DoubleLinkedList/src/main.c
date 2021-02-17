@@ -21,6 +21,10 @@ int main(void) {
 	double_linked_list_insert(mylist, 1, -2);
 	double_linked_list_delete_node_as_position(mylist, 6);
 //	double_linked_list_delete_list(mylist);
+	printf("%u is length of double linked list\n",
+			double_linked_list_find_length_iterative(mylist));
+	printf("%u is length of double linked list\n",
+			double_linked_list_find_length_recursive(mylist->head));
 	double_linked_list_print(mylist);
 	return 0;
 }

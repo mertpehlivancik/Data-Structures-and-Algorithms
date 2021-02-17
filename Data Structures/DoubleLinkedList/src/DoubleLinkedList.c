@@ -114,6 +114,24 @@ void double_linked_list_delete_list(DOUBLE_LINKED_LIST list) {
 	free(list);
 }
 
+unsigned int double_linked_list_find_length_iterative(DOUBLE_LINKED_LIST list) {
+	DOUBLE_LINKED_LIST_NODE node = list->head;
+	unsigned int counter = 0;
+	while (node != NULL) {
+		node = node->next;
+		counter++;
+	}
+	return counter;
+}
+
+unsigned int double_linked_list_find_length_recursive(
+		DOUBLE_LINKED_LIST_NODE node) {
+	if (node == NULL) {
+		return 0;
+	}
+	return 1 + double_linked_list_find_length_recursive(node->next);
+}
+
 // This function prints given double linked list as node by node.
 void double_linked_list_print(DOUBLE_LINKED_LIST list) {
 	DOUBLE_LINKED_LIST_NODE node = list->head;
