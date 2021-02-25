@@ -28,5 +28,6 @@ typedef struct LINKED_BINARY_SEARCH_TREE_s {
 
 LINKED_BINARY_SEARCH_TREE linked_binary_search_tree_init();
 LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_node_init(int data);
+void linked_binary_search_tree_insert(LINKED_BINARY_SEARCH_TREE tree, int data);
 
 #endif /* LINKEDBINARYSEARCHTREE_H_ */

@@ -11,7 +11,11 @@
 #include "LinkedBinarySearchTree.h"
 
 int main(void) {
-	puts("LinkedBinarySearchTree"); /* prints LinkedBinarySearchTree */
-	return EXIT_SUCCESS;
+	LINKED_BINARY_SEARCH_TREE mytree = linked_binary_search_tree_init();
+	linked_binary_search_tree_insert(mytree, 50);
+	linked_binary_search_tree_insert(mytree, 25);
+	linked_binary_search_tree_insert(mytree, 75);
+	linked_binary_search_tree_insert(mytree, 20);
+	return 0;
 }
 
