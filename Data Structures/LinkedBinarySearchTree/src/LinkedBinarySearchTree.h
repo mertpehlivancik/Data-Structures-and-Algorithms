@@ -12,6 +12,7 @@
 #define LINKEDBINARYSEARCHTREE_H_
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct LINKED_BINARY_SEARCH_TREE_NODE_s *LINKED_BINARY_SEARCH_TREE_NODE;
 typedef struct LINKED_BINARY_SEARCH_TREE_NODE_s {
@@ -24,5 +25,8 @@ typedef struct LINKED_BINARY_SEARCH_TREE_s *LINKED_BINARY_SEARCH_TREE;
 typedef struct LINKED_BINARY_SEARCH_TREE_s {
 	LINKED_BINARY_SEARCH_TREE_NODE root;
 } LINKED_BINARY_SEARCH_TREE_t[1];
+
+LINKED_BINARY_SEARCH_TREE linked_binary_search_tree_init();
+LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_node_init(int data);
 
 #endif /* LINKEDBINARYSEARCHTREE_H_ */
