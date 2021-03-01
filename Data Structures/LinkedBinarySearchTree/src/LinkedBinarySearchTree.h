@@ -39,4 +39,5 @@ int linked_binary_search_tree_totalInternalNodes(
 		LINKED_BINARY_SEARCH_TREE_NODE node);
 int linked_binary_search_tree_totalExternalNodes(
 		LINKED_BINARY_SEARCH_TREE_NODE node);
+void linked_binary_search_tree_mirrorImage(LINKED_BINARY_SEARCH_TREE_NODE node);
 #endif /* LINKEDBINARYSEARCHTREE_H_ */

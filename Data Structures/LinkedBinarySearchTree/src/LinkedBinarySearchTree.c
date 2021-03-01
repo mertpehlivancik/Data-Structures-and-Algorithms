@@ -147,3 +147,14 @@ int linked_binary_search_tree_totalExternalNodes(
 	}
 }
 
+// This function is used to find the mirror image of a linked binary search tree.
+void linked_binary_search_tree_mirrorImage(LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node != NULL) {
+		linked_binary_search_tree_mirrorImage(node->left);
+		linked_binary_search_tree_mirrorImage(node->right);
+		LINKED_BINARY_SEARCH_TREE_NODE temp = node->left;
+		node->left = node->right;
+		node->right = temp;
+	}
+}
+

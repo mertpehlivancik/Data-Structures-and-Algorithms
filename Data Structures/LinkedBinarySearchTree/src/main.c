@@ -12,13 +12,20 @@
 
 int main(void) {
 	LINKED_BINARY_SEARCH_TREE mytree = linked_binary_search_tree_init();
+//	linked_binary_search_tree_insert(mytree, 45);
+//	linked_binary_search_tree_insert(mytree, 39);
+//	linked_binary_search_tree_insert(mytree, 56);
+//	linked_binary_search_tree_insert(mytree, 54);
+//	linked_binary_search_tree_insert(mytree, 55);
+//	linked_binary_search_tree_insert(mytree, 78);
+//	linked_binary_search_tree_insert(mytree, 80);
+
 	linked_binary_search_tree_insert(mytree, 45);
 	linked_binary_search_tree_insert(mytree, 39);
-	linked_binary_search_tree_insert(mytree, 56);
-	linked_binary_search_tree_insert(mytree, 54);
-	linked_binary_search_tree_insert(mytree, 55);
 	linked_binary_search_tree_insert(mytree, 78);
-	linked_binary_search_tree_insert(mytree, 80);
+	linked_binary_search_tree_insert(mytree, 54);
+	linked_binary_search_tree_insert(mytree, 79);
+
 //	linked_binary_search_tree_insert(mytree, 79);
 //	linked_binary_search_tree_delete(mytree->root, 56);
 //	linked_binary_search_tree_delete(mytree->root, 54);
@@ -33,6 +40,7 @@ int main(void) {
 	int totalExternaNodes = linked_binary_search_tree_totalExternalNodes(
 			mytree->root);
 	printf("%d\n", totalExternaNodes);
+	linked_binary_search_tree_mirrorImage(mytree->root);
 	return 0;
 }
 
