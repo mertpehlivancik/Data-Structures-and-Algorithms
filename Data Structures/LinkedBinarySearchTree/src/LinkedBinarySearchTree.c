@@ -158,3 +158,12 @@ void linked_binary_search_tree_mirrorImage(LINKED_BINARY_SEARCH_TREE_NODE node) 
 	}
 }
 
+// This function is used to delete entire binary tree node by node.
+void linked_binary_search_tree_deleteTree(LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node != NULL) {
+		linked_binary_search_tree_deleteTree(node->left);
+		linked_binary_search_tree_deleteTree(node->right);
+		free(node);
+	}
+}
+
