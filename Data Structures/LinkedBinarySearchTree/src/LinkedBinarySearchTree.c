@@ -96,3 +96,18 @@ LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_delete(
 	return node;
 }
 
+// This function is used to find height of given binary search tree.
+int linked_binary_search_tree_height(LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node == NULL) {
+		return 0;
+	} else {
+		int leftHeight = linked_binary_search_tree_height(node->left);
+		int rightHeight = linked_binary_search_tree_height(node->right);
+		if (leftHeight > rightHeight) {
+			return leftHeight + 1;
+		} else {
+			return rightHeight + 1;
+		}
+	}
+}
+

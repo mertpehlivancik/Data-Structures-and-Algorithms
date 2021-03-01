@@ -23,6 +23,8 @@ int main(void) {
 //	linked_binary_search_tree_delete(mytree->root, 56);
 //	linked_binary_search_tree_delete(mytree->root, 54);
 //	linked_binary_search_tree_delete(mytree->root, 80);
+	int height = linked_binary_search_tree_height(mytree->root);
+	printf("%d\n", height);
 	return 0;
 }
 
