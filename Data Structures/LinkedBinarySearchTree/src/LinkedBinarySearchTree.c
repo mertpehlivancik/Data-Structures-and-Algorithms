@@ -167,3 +167,13 @@ void linked_binary_search_tree_deleteTree(LINKED_BINARY_SEARCH_TREE_NODE node) {
 	}
 }
 
+// This function is used to find smallest node in given linked binary search tree.
+LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_findSmallestNode(
+		LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node == NULL || node->left == NULL) {
+		return node;
+	} else {
+		return linked_binary_search_tree_findSmallestNode(node->left);
+	}
+}
+

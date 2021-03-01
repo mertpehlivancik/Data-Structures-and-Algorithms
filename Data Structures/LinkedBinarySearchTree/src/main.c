@@ -43,6 +43,9 @@ int main(void) {
 	printf("%d\n", totalExternaNodes);
 	linked_binary_search_tree_mirrorImage(mytree2->root);
 	linked_binary_search_tree_deleteTree(mytree2->root);
+	LINKED_BINARY_SEARCH_TREE_NODE smallestNode =
+			linked_binary_search_tree_findSmallestNode(mytree->root);
+	printf("%d\n", smallestNode->data);
 	return 0;
 }
 
