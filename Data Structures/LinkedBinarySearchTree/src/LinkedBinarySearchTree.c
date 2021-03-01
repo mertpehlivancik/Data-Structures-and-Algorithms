@@ -111,3 +111,13 @@ int linked_binary_search_tree_height(LINKED_BINARY_SEARCH_TREE_NODE node) {
 	}
 }
 
+// This function is used to find total number of nodes in given binary search tree.
+int linked_binary_search_tree_totalNodes(LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node == NULL) {
+		return 0;
+	} else {
+		return linked_binary_search_tree_totalNodes(node->left)
+				+ linked_binary_search_tree_totalNodes(node->right) + 1;
+	}
+}
+

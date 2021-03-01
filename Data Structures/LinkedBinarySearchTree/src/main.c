@@ -25,6 +25,8 @@ int main(void) {
 //	linked_binary_search_tree_delete(mytree->root, 80);
 	int height = linked_binary_search_tree_height(mytree->root);
 	printf("%d\n", height);
+	int totalNodes = linked_binary_search_tree_totalNodes(mytree->root);
+	printf("%d\n", totalNodes);
 	return 0;
 }
 
