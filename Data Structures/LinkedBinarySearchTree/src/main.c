@@ -27,6 +27,12 @@ int main(void) {
 	printf("%d\n", height);
 	int totalNodes = linked_binary_search_tree_totalNodes(mytree->root);
 	printf("%d\n", totalNodes);
+	int totalInternalNodes = linked_binary_search_tree_totalInternalNodes(
+			mytree->root);
+	printf("%d\n", totalInternalNodes);
+	int totalExternaNodes = linked_binary_search_tree_totalExternalNodes(
+			mytree->root);
+	printf("%d\n", totalExternaNodes);
 	return 0;
 }
 

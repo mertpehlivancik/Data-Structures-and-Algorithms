@@ -121,3 +121,29 @@ int linked_binary_search_tree_totalNodes(LINKED_BINARY_SEARCH_TREE_NODE node) {
 	}
 }
 
+// This function is used to find total number of internal nodes in given binary search tree.
+int linked_binary_search_tree_totalInternalNodes(
+		LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node == NULL) {
+		return 0;
+	} else if (node->left == NULL && node->right == NULL) {
+		return 0;
+	} else {
+		return linked_binary_search_tree_totalInternalNodes(node->left)
+				+ linked_binary_search_tree_totalInternalNodes(node->right) + 1;
+	}
+}
+
+// This function is used to find total number of external nodes in given binary search tree.
+int linked_binary_search_tree_totalExternalNodes(
+		LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node == NULL) {
+		return 0;
+	} else if (node->left == NULL && node->right == NULL) {
+		return 1;
+	} else {
+		return linked_binary_search_tree_totalExternalNodes(node->left)
+				+ linked_binary_search_tree_totalExternalNodes(node->right);
+	}
+}
+

@@ -35,4 +35,8 @@ LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_delete(
 		LINKED_BINARY_SEARCH_TREE_NODE node, int data);
 int linked_binary_search_tree_height(LINKED_BINARY_SEARCH_TREE_NODE node);
 int linked_binary_search_tree_totalNodes(LINKED_BINARY_SEARCH_TREE_NODE node);
+int linked_binary_search_tree_totalInternalNodes(
+		LINKED_BINARY_SEARCH_TREE_NODE node);
+int linked_binary_search_tree_totalExternalNodes(
+		LINKED_BINARY_SEARCH_TREE_NODE node);
 #endif /* LINKEDBINARYSEARCHTREE_H_ */
