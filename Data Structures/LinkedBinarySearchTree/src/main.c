@@ -12,10 +12,17 @@
 
 int main(void) {
 	LINKED_BINARY_SEARCH_TREE mytree = linked_binary_search_tree_init();
-	linked_binary_search_tree_insert(mytree, 50);
-	linked_binary_search_tree_insert(mytree, 25);
-	linked_binary_search_tree_insert(mytree, 75);
-	linked_binary_search_tree_insert(mytree, 20);
+	linked_binary_search_tree_insert(mytree, 45);
+	linked_binary_search_tree_insert(mytree, 39);
+	linked_binary_search_tree_insert(mytree, 56);
+	linked_binary_search_tree_insert(mytree, 54);
+	linked_binary_search_tree_insert(mytree, 55);
+	linked_binary_search_tree_insert(mytree, 78);
+	linked_binary_search_tree_insert(mytree, 80);
+//	linked_binary_search_tree_insert(mytree, 79);
+//	linked_binary_search_tree_delete(mytree->root, 56);
+//	linked_binary_search_tree_delete(mytree->root, 54);
+//	linked_binary_search_tree_delete(mytree->root, 80);
 	return 0;
 }
 

@@ -57,3 +57,42 @@ void linked_binary_search_tree_insert(LINKED_BINARY_SEARCH_TREE tree, int data) 
 	}
 }
 
+// Give tree's root node as parameter for using this function
+// This function is used to find largest node from given tree
+LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_findLargestNode(
+		LINKED_BINARY_SEARCH_TREE_NODE node) {
+	if (node == NULL || node->right == NULL) {
+		return node;
+	} else {
+		return linked_binary_search_tree_findLargestNode(node->right);
+	}
+}
+
+// This function is used to delete given node from given binary search tree
+LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_delete(
+		LINKED_BINARY_SEARCH_TREE_NODE node, int data) {
+	if (node == NULL) {
+		return node;
+	}
+	if (data < node->data) {
+		node->left = linked_binary_search_tree_delete(node->left, data);
+	} else if (data > node->data) {
+		node->right = linked_binary_search_tree_delete(node->right, data);
+	} else {
+		if (node->left == NULL) {
+			LINKED_BINARY_SEARCH_TREE_NODE temp = node->right;
+			free(node);
+			return temp;
+		} else if (node->right == NULL) {
+			LINKED_BINARY_SEARCH_TREE_NODE temp = node->left;
+			free(node);
+			return temp;
+		}
+		LINKED_BINARY_SEARCH_TREE_NODE temp =
+				linked_binary_search_tree_findLargestNode(node->left);
+		node->data = temp->data;
+		node->left = linked_binary_search_tree_delete(node->left, temp->data);
+	}
+	return node;
+}
+

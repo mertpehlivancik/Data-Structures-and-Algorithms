@@ -29,5 +29,9 @@ typedef struct LINKED_BINARY_SEARCH_TREE_s {
 LINKED_BINARY_SEARCH_TREE linked_binary_search_tree_init();
 LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_node_init(int data);
 void linked_binary_search_tree_insert(LINKED_BINARY_SEARCH_TREE tree, int data);
+LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_findLargestNode(
+		LINKED_BINARY_SEARCH_TREE_NODE node);
+LINKED_BINARY_SEARCH_TREE_NODE linked_binary_search_tree_delete(
+		LINKED_BINARY_SEARCH_TREE_NODE node, int data);
 
 #endif /* LINKEDBINARYSEARCHTREE_H_ */
